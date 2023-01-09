@@ -119,12 +119,17 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - run:
+          name: install depenedencies
+          command: |
+            cd backend
+            npm install
+      - run:
           name: scan back-end
           command: |
             cd backend
             npm install
             npm audit fix --audit-level=critical --force
-            npm audit fix --force
+            npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
 
 #   deploy-infrastructure:
