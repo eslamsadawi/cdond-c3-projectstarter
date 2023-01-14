@@ -69,6 +69,8 @@ commands:
             npm run migration:revert
             fi
 
+#RERUN SCRIPT
+
 jobs:
   build-frontend:
     docker:
