@@ -253,6 +253,7 @@ jobs:
             fi
       - destroy-environment
       - revert-migrations
+  #just double doing the migrations steps
 
   # deploy-frontend:
   #   docker:
