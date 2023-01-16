@@ -292,18 +292,18 @@ jobs:
 
   deploy-backend:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/python:3.10
     steps:
       - checkout
       - install_awscli
       - install_ansible
       - install_nodejs
+      - restore_cache:
+          keys: [backend-deps]
       - add_ssh_keys:
           fingerprints: ["28:59:f7:e7:9e:16:d2:64:22:1b:14:63:a5:cc:ec:c5"]
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          keys: [backend-deps]
       - run:
           name: Install dependencies
           command: |
@@ -321,9 +321,9 @@ jobs:
       - run:
           name: Deploy backend
           command: |
-            export TYPE_MIGRATIONS_DIR=./migrations
-            export TYPE_ENTITIES=./modules/domain/**/*.entity{.ts,.js}
-            export TYPE_MIGRATIONS=./migrations/*.ts
+            export TYPEORM_MIGRATIONS_DIR=./migrations
+            export TYPEORM_ENTITIES=./modules/domain/**/*.entity{.ts,.js}
+            export TYPEORM_MIGRATIONS=./migrations/*.ts
 
             cd .circleci/ansible
             cat inventory.txt
