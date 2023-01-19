@@ -446,8 +446,8 @@ workflows:
           requires: [deploy-backend, deploy-frontend]
       - cloudfront-update:
           requires: [smoke-test]
-      - cleanup:
-          requires: [cloudfront-update]
+      # - cleanup:
+      #     requires: [cloudfront-update]
 # aws ec2 describe-instances --filters "Name=private-ip-address,Values=$i" \
 # "Name=,Values=True" "Name=tag:Env,Values=Dev" \
 # --query 'Reservations[*].Instances[*].[PublicIpAddress]' \
@@ -462,8 +462,8 @@ workflows:
 # echo Old Workflow ID: $OldworkflowID
 # if [[ "${STACKS [@]}" =~ "${0ldworkflowID}" ]]
 # then
-# aws s3 rm "s3://udapeople-529f745" --recursive
-# aws cloudformation delete-stack --stack-name "udapeople-backend-529f745"
-# aws cloudformation delete-stack --stack-name "udapeople-frontend-529f745"
+# aws s3 rm "s3://udapeople-1790d56" --recursive
+# aws cloudformation delete-stack --stack-name "udapeople-backend-1790d56"
+# aws cloudformation delete-stack --stack-name "udapeople-frontend-1790d56"
 # fi
 #inidnvebv
