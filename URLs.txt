@@ -1,4 +1,4 @@
 https://github.com/eslamsadawi/cdond-c3-projectstarter.git                            (github repo URL)
-http://udapeople-a24d6b3.s3-website-us-east-1.amazonaws.com                      (bucket URL)
-d19v61j8g5wlsi.cloudfront.net                                                                         (cloudfront domain name)
+http://udapeople-5968d07.s3-website-us-east-1.amazonaws.com                      (bucket URL)
+http://d30oyl2vu6p6kl.cloudfront.net                                                                         (cloudfront domain name)
 http://<backendpublicIP:3030/api/status>			              (URL of a healthy backend)

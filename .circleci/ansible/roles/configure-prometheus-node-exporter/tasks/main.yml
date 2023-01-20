@@ -4,6 +4,12 @@
     dest: /tmp
     remote_src: yes
 
+# - name: add user node_exporter
+#   user:
+#     name: "node_exporter"
+#     state: present
+#     groups: "sudo"
+
 - name: "move binary to /usr/local/bin."
   become: true
   copy:
